@@ -15,7 +15,7 @@ namespace WxOpenIdCore.Controllers
     public class WxCodeController : Controller
     {
         // GET: /<controller>/
-        public IActionResult Index()
+        public void Index()
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
 
@@ -27,7 +27,6 @@ namespace WxOpenIdCore.Controllers
                 + reurl + "&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect";
             Response.Redirect(url);
 
-            return View();
         }
 
         public async Task OpenId()

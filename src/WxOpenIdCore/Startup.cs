@@ -37,7 +37,12 @@ namespace WxOpenIdCore
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=WxCode}/{action=Index}/{id?}");
+            });
         }
     }
 }

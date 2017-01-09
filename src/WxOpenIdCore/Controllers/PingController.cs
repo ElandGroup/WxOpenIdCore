@@ -13,7 +13,7 @@ namespace WxOpenIdCore.Controllers
         [HttpGet]
         public string Get()
         {
-            return "Ping";
+            return "Pong";
         }
 
     }
